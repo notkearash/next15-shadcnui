@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
+import { ModeToggle } from "@/components/mode-toggle";
 
 const colors = [
   { name: "Primary", bg: "bg-primary", text: "text-primary-foreground" },
@@ -16,13 +17,18 @@ const colors = [
 
 export default function HomePage() {
   return (
-    <div className="flex flex-col h-screen justify-center items-center">
-      <h1 className="text-lg my-2">next v15 + shadcn/ui</h1>
-      <p className="font-sans">Your font in sans</p>
-      <p className="font-mono">Your font in mono</p>
+    <div className="flex flex-col h-screen justify-center items-center gap-8">
+      <div className="flex flex-col gap-2 shadow shadow-foreground p-4 rounded-lg">
+        <p className="font-sans">Your font in sans</p>
+        <p className="font-mono">Your font in mono</p>
+      </div>
 
-      <h1 className="text-lg mt-8">Color Theme</h1>
-      <div className="grid grid-cols-3 my-4 gap-4">
+      <div className="flex flex-row items-center gap-1 shadow shadow-foreground p-4 rounded-lg">
+        <h1 className="text-lg">Theme Switcher:</h1>
+        <ModeToggle />
+      </div>
+
+      <div className="grid grid-cols-3 my-4 gap-4 shadow shadow-foreground p-4 rounded-lg">
         {colors.map((color) => (
           <div
             key={color.name}
@@ -33,14 +39,22 @@ export default function HomePage() {
         ))}
       </div>
 
-      <h1 className="text-lg mt-8">Button Variants</h1>
-      <div className="grid grid-rows-2 grid-cols-3 my-2 gap-2">
+      <div className="grid grid-rows-2 grid-cols-3 my-2 gap-2 p-4 rounded-lg shadow shadow-foreground">
         <Button variant="default">Default</Button>
         <Button variant="secondary">Secondary</Button>
         <Button variant="outline">Outline</Button>
         <Button variant="link">Link</Button>
         <Button variant="destructive">Destructive</Button>
         <Button variant="ghost">Ghost</Button>
+      </div>
+      <div className="flex flex-row items-center font-mono">
+        <a href="https://github.com/notkearash/next15-shadcnui">
+          <Button variant={"link"}>next15 + shadcn/ui </Button>
+        </a>
+        <p>{"by"}</p>
+        <a href="https://github.com/notkearash">
+          <Button variant={"link"}>@notkearash</Button>
+        </a>
       </div>
     </div>
   );

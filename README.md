@@ -6,5 +6,5 @@ NextJS v15 + ShadcnUI template with some personal tweaks including:
 
 Todo:
 
-- [ ] Add and configure theme switcher
+- [x] Add and configure theme switcher
 
