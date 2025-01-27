@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import {
-  IBM_Plex_Sans as FontSans,
+  Rubik as FontSans,
   IBM_Plex_Mono as FontMono,
 } from "next/font/google";
 import "./globals.css";

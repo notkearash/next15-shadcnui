@@ -18,17 +18,17 @@ const colors = [
 export default function HomePage() {
   return (
     <div className="flex flex-col h-screen justify-center items-center gap-8">
-      <div className="flex flex-col gap-2 shadow shadow-foreground p-4 rounded-lg">
+      <div className="flex flex-col gap-2 shadow shadow-primary p-4 rounded-lg">
         <p className="font-sans">Your font in sans</p>
         <p className="font-mono">Your font in mono</p>
       </div>
 
-      <div className="flex flex-row items-center gap-1 shadow shadow-foreground p-4 rounded-lg">
+      <div className="flex flex-row items-center gap-1 shadow shadow-primary p-4 rounded-lg">
         <h1 className="text-lg">Theme Switcher:</h1>
         <ModeToggle />
       </div>
 
-      <div className="grid grid-cols-3 my-4 gap-4 shadow shadow-foreground p-4 rounded-lg">
+      <div className="grid grid-cols-3 my-4 gap-4 shadow shadow-primary p-4 rounded-lg">
         {colors.map((color) => (
           <div
             key={color.name}
@@ -39,7 +39,7 @@ export default function HomePage() {
         ))}
       </div>
 
-      <div className="grid grid-rows-2 grid-cols-3 my-2 gap-2 p-4 rounded-lg shadow shadow-foreground">
+      <div className="grid grid-rows-2 grid-cols-3 my-2 gap-2 p-4 rounded-lg shadow shadow-primary">
         <Button variant="default">Default</Button>
         <Button variant="secondary">Secondary</Button>
         <Button variant="outline">Outline</Button>
