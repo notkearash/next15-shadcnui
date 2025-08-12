@@ -17,43 +17,67 @@ const colors = [
 
 export default function HomePage() {
   return (
-    <div className="flex flex-col h-screen justify-center items-center gap-8">
-      <div className="flex flex-col gap-2 shadow shadow-primary p-4 rounded-lg">
-        <p className="font-sans">Your font in sans</p>
-        <p className="font-mono">Your font in mono</p>
+    <div className="container mx-auto max-w-4xl p-8 space-y-12">
+      <div className="text-center space-y-4">
+        <h1 className="text-4xl font-bold">Next.js 15 + shadcn/ui</h1>
+        <p className="text-muted-foreground">A modern starter template</p>
       </div>
 
-      <div className="flex flex-row items-center gap-1 shadow shadow-primary p-4 rounded-lg">
-        <h1 className="text-lg">Theme Switcher:</h1>
-        <ModeToggle />
+      <div className="flex justify-center">
+        <div className="flex items-center gap-3 p-4 border rounded-lg">
+          <span className="text-lg font-medium">Theme:</span>
+          <ModeToggle />
+        </div>
       </div>
 
-      <div className="grid grid-cols-3 my-4 gap-4 shadow shadow-primary p-4 rounded-lg">
-        {colors.map((color) => (
-          <div
-            key={color.name}
-            className={`p-4 h-10 flex justify-center items-center ${color.bg} ${color.text} rounded-lg border border-border shadow-md`}
-          >
-            {color.name}
+      <div className="space-y-6">
+        <h2 className="text-2xl font-semibold text-center">Typography</h2>
+        <div className="flex justify-center gap-8">
+          <div className="text-center">
+            <p className="font-sans text-lg">Sans Serif</p>
+            <p className="text-sm text-muted-foreground">font-sans</p>
           </div>
-        ))}
+          <div className="text-center">
+            <p className="font-mono text-lg">Monospace</p>
+            <p className="text-sm text-muted-foreground">font-mono</p>
+          </div>
+        </div>
       </div>
 
-      <div className="grid grid-rows-2 grid-cols-3 my-2 gap-2 p-4 rounded-lg shadow shadow-primary">
-        <Button variant="default">Default</Button>
-        <Button variant="secondary">Secondary</Button>
-        <Button variant="outline">Outline</Button>
-        <Button variant="link">Link</Button>
-        <Button variant="destructive">Destructive</Button>
-        <Button variant="ghost">Ghost</Button>
+      <div className="space-y-6">
+        <h2 className="text-2xl font-semibold text-center">Color Palette</h2>
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+          {colors.map((color) => (
+            <div
+              key={color.name}
+              className={`p-6 flex justify-center items-center ${color.bg} ${color.text} rounded-lg border`}
+            >
+              <span className="font-medium">{color.name}</span>
+            </div>
+          ))}
+        </div>
       </div>
-      <div className="flex flex-row items-center font-mono">
-        <a href="https://github.com/notkearash/next15-shadcnui">
-          <Button variant={"link"}>next15 + shadcn/ui </Button>
+
+      <div className="space-y-6">
+        <h2 className="text-2xl font-semibold text-center">Button Variants</h2>
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+          <Button variant="default">Default</Button>
+          <Button variant="secondary">Secondary</Button>
+          <Button variant="outline">Outline</Button>
+          <Button variant="link">Link</Button>
+          <Button variant="destructive">Destructive</Button>
+          <Button variant="ghost">Ghost</Button>
+        </div>
+      </div>
+
+      <div className="flex justify-center items-center gap-2 text-sm text-muted-foreground">
+        <span>Made by</span>
+        <a href="https://github.com/notkearash" className="hover:text-foreground transition-colors">
+          @notkearash
         </a>
-        <p>{"by"}</p>
-        <a href="https://github.com/notkearash">
-          <Button variant={"link"}>@notkearash</Button>
+        <span>•</span>
+        <a href="https://github.com/notkearash/next15-shadcnui" className="hover:text-foreground transition-colors">
+          View on GitHub
         </a>
       </div>
     </div>
